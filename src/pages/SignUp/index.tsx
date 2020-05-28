@@ -34,7 +34,6 @@ const SignUp: React.FC = () => {
 
       formRef.current?.setErrors(errors);
     }
-    console.log(data);
   }, []);
 
   return (
