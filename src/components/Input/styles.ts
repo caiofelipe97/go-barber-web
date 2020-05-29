@@ -55,12 +55,12 @@ export const Container = styled.div<ContainerProps>`
       transition: background-color 0s ease-in-out 0s;
       transition-delay: 6000s;
       -webkit-text-fill-color: #f4ede8 !important;
-    }
-}
+      }
+     
 
     & + input {
       margin-top: 8px;
-    }
+      }
   }
 
   svg {
