@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FiPower, FiClock } from 'react-icons/fi';
 
@@ -10,6 +10,8 @@ import {
   Content,
   Schedule,
   NextAppointment,
+  Section,
+  Apointment,
   Calendar,
 } from './styles';
 
@@ -17,6 +19,8 @@ import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/auth';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
   const { signOut, user } = useAuth();
   return (
     <Container>
@@ -58,6 +62,52 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointment>
+
+          <Section>
+            <strong>Manhã</strong>
+            <Apointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/20324935?s=460&u=252e93639dae9e6e666547a2856144fc3fea3fcb&v=4"
+                  alt="Caio Felipe"
+                />
+                <strong>Caio Felipe</strong>
+              </div>
+            </Apointment>
+            <Apointment>
+              <span>
+                <FiClock />
+                10:00
+              </span>
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/20324935?s=460&u=252e93639dae9e6e666547a2856144fc3fea3fcb&v=4"
+                  alt="Caio Felipe"
+                />
+                <strong>Caio Felipe</strong>
+              </div>
+            </Apointment>
+          </Section>
+          <Section>
+            <strong>Tarde</strong>
+            <Apointment>
+              <span>
+                <FiClock />
+                14:00
+              </span>
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/20324935?s=460&u=252e93639dae9e6e666547a2856144fc3fea3fcb&v=4"
+                  alt="Caio Felipe"
+                />
+                <strong>Caio Felipe</strong>
+              </div>
+            </Apointment>
+          </Section>
         </Schedule>
         <Calendar />
       </Content>
